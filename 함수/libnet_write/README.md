@@ -7,7 +7,7 @@
 ```c++
 #include <libnet.h>
 
-int libnet_get_prand(libnet_t *l);
+int libnet_write(libnet_t *l);
 ```
 
 # **parameter**
