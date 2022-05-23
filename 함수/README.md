@@ -22,7 +22,7 @@ void Hello(const char *msg);
 # **parameter**
 
 | parameter | description |
-| :--- | :--- |
+| :---      | :--- |
 | msg | 데이터가 담긴 변수 포인터(위치) |
 
 # **Return**

@@ -96,7 +96,7 @@ rewind(FilePointer);
 
 ## **파일 읽기**
 
-구한 파일 크기를 이용하여 [malloc]을 통해 데이터를 담을 버퍼를 생성 후 [fread_s](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/fread_s)를 통해 파일의 데이터를 읽습니다.
+구한 파일 크기를 이용하여 [malloc](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/malloc)을 통해 데이터를 담을 버퍼를 생성 후 [fread_s](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/fread_s)를 통해 파일의 데이터를 읽습니다.
 
 ```c++
 char *FileData  = (char*)malloc(sizeof(char) * FileLength);
