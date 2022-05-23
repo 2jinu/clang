@@ -48,7 +48,7 @@ libpcap-dev를 설치한다.
 root@ubuntu:~# apt-get install libpcap-dev
 ```
 
-컴파일시 lpcap을 링크시켜준다.
+컴파일시 libpcap을 링크시켜준다.
 
 ```sh
 root@ubuntu:~# g++ -g source.cpp -lpcap -o outputfile
