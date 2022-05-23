@@ -4,22 +4,48 @@
 
 **1. [파일 열고 닫기](#파일-열고-닫기)**
 
+ - [파일 열기](#파일-열기)
+
+ - [파일 닫기](#파일-닫기)
+
 **2. [파일 읽고 쓰기](#파일-읽고-쓰기)**
 
- - [fseek](#fseek)
+ - [파일 크기 구하기](#파일-크기-구하기)
 
- - [ftell](#ftell)
+ - [파일 읽기](#파일-읽기)
 
- - [rewind](#rewind)
+ - [파일 쓰기](#파일-쓰기)
 
- - [fread_s](#fread_s)
-
- - [fwrite](#fwrite)
+**3. [Full Code](#Full-Code)**
 
 
 # **파일 열고 닫기**
 
-파일을 다루기 위해서 파일을 열고 닫습니다.
+## **파일 열기**
+
+[fopen_s](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/fopen_s)를 이용하여 지정한 파일을 엽니다.
+
+```c++
+FILE *FilePointer;
+errno_t err;
+const char *FileName = ".\\Hello World.txt";
+
+err = fopen_s(&FilePointer, FileName, "r");
+if (err != 0 || FilePointer == NULL) {
+    printf("cannot open file : %s\n", FileName);
+    return 0;
+}
+```
+
+## **파일 닫기**
+
+[fclose](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/fclose)를 이용하여 지정한 파일 스트림을 닫습니다.
+
+```c++
+fclose(FilePointer);
+```
+
+## **Full Code**
 
 ```c++
 #include <windows.h>
@@ -45,13 +71,55 @@ int main(void)
 
 # **파일 읽고 쓰기**
 
-파일을 내용을 읽고 수정합니다.
-
 파일을 읽기 위해서 Hello World.txt를 생성 후 미리 데이터를 넣어놓습니다.
 
 * Hello World.txt
 
     abcdefghijklmnopqrstuvwxyz0123456789!
+
+## **파일 크기 구하기**
+
+파일을 읽기 위해서 [fseek](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/fseek)과 [ftell](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/ftell)을 이용하여 파일의 크기를 구합니다.
+
+```c++
+int Result;
+Result = fseek(FilePointer, 0L, SEEK_END);
+if (Result != 0) {
+    printf("fseek error : %d\n", Result);
+    fclose(FilePointer);
+    return 0;
+}
+
+long FileLength = ftell(FilePointer);
+rewind(FilePointer);
+```
+
+## **파일 읽기**
+
+구한 파일 크기를 이용하여 [malloc]을 통해 데이터를 담을 버퍼를 생성 후 [fread_s](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/fread_s)를 통해 파일의 데이터를 읽습니다.
+
+```c++
+char *FileData  = (char*)malloc(sizeof(char) * FileLength);
+if (FileData == NULL) {
+    printf("malloc error\n");
+    fclose(FilePointer);
+    return 0;
+}
+int ReadCount       = fread_s(FileData, FileLength, FileLength, 1, FilePointer);
+printf("read data  = %s\n", FileData);
+free(FileData);
+```
+
+## **파일 쓰기**
+
+[fwrite](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/fwrite)를 이용하여 파일에 데이터를 씁니다.
+
+```c++
+const char* WriteData = "가나다라마바사";
+fwrite(WriteData, strlen(WriteData), 1, FilePointer);
+```
+
+# **Full Code**
 
 ```c++
 #include <windows.h>
@@ -103,25 +171,3 @@ int main(void)
 * Hello World.txt
 
     abcdefghijklmnopqrstuvwxyz0123456789!가나다라마바사
-
-
-## **rewind**
-
-파일 포인터의 위치를 파일의 시작 부분으로 변경합니다.
-
-fseek(stream, 0L, SEEK_SET)과 유사하지만, rewind를 포인터가 성공적으로 이동되었는지를 파악할 수 없습니다.
-
-### Syntax
-
-```c++
-#include <stdio.h>
-
-void rewind(FILE* stream);
-```
-
-### parameter
-
-| parameter | description |
-| :--- | :--- |
-| stream | FILE 구조체에 대한 포인터 |
-
