@@ -1,28 +1,17 @@
-# clang
-
-실행 환경
-
-| Type | Version |
-| :--- | :---    |
-| OS   | Ubuntu |
-| g++  | 1 |
-
-# **INDEX**
-
-**1. [Hello World](#Hello-World)**
-
- - [Hello](#Hello)
-
-
-# **Hello World**
+# Functions
 
 Hello World
 
-## **Hello**
+# **INDEX**
 
-안녕하세요.
+**1. [Syntax](#Syntax)**
 
-### Syntax
+**1. [parameter](#parameter)**
+
+**1. [Return](#Return)**
+
+
+# **Syntax**
 
 ```c++
 #include <stdio.h>
@@ -30,12 +19,12 @@ Hello World
 void Hello(const char *msg);
 ```
 
-### parameter
+# **parameter**
 
 | parameter | description |
 | :--- | :--- |
 | msg | 데이터가 담긴 변수 포인터(위치) |
 
-### Return
+# **Return**
 
 성공 시 0을 반환하고, 실패 시 0이 아닌 값을 반환합니다.
