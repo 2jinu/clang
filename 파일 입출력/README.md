@@ -1,5 +1,13 @@
 # 파일 입출력
 
+실행 환경
+
+| Type          | Version           |
+| :---          | :---              |
+| OS            | Windows 21H1      |
+| Architecture  | x86-64            |
+| Visual Studio | Community 2019    |
+
 # **INDEX**
 
 **1. [파일 열고 닫기](#파일-열고-닫기)**
