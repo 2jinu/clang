@@ -7,7 +7,7 @@
 
 # **Commandline 인자 받기**
 
-GetCommandLine함수를 통해서 인자를 파싱할 수 있다.
+[GetCommandLine](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/GetCommandLine)함수를 통해서 인자를 파싱할 수 있다.
 
 ```c++
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow){
