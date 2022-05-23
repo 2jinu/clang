@@ -27,15 +27,15 @@
 
 **4. [패킷 분석](#패킷-분석)**
 
- - [ethernet](#ethernet)
+ - [ETHERNET](#ETHERNET)
 
- - [ip](#ip)
+ - [IP](#IP)
 
- - [icmp](#icmp)
+ - [ICMP](#ICMP)
 
- - [tcp](#tcp)
+ - [TCP](#TCP)
 
- - [udp](#udp)
+ - [UDP](#UDP)
 
 **5. [Full Code](#Full-Code)**
 
@@ -45,7 +45,7 @@
 libpcap-dev를 설치한다.
 
 ```sh
-root@ubuntu:~# apt-get install libpcap-dev
+root@ubuntu:~# apt-get -y install libpcap-dev
 ```
 
 컴파일시 libpcap을 링크시켜준다.
@@ -211,9 +211,9 @@ void callback_function(u_char *args, const struct pcap_pkthdr *pkthdr, const u_c
 
 # **패킷 분석**
 
-## **ethernet**
+## **ETHERNET**
 
-ethernet 헤더는 14byte로 구성되어 있다.
+ETHERNET 헤더는 14byte로 구성되어 있다.
 
 | Type                      | Byte  |
 | :---                      | :---  |
@@ -229,9 +229,9 @@ printf("   |-Source Address\t\t: %.2X-%.2X-%.2X-%.2X-%.2X-%.2X \n", ethernet_hea
 printf("   |-Protocol\t\t\t: %u \n",(unsigned short)ethernet_header->h_proto);
 ```
 
-## **ip**
+## **IP**
 
-ip 헤더는 20byte로 구성되어 있다.
+IP 헤더는 20byte로 구성되어 있다.
 
 | Type                      | Byte  |
 | :---                      | :---  |
@@ -269,9 +269,9 @@ printf("   |-Source IP\t\t\t: %s\n" , inet_ntoa(source.sin_addr) );
 printf("   |-Destination IP\t\t: %s\n" , inet_ntoa(dest.sin_addr) );
 ```
 
-## **icmp**
+## **ICMP**
 
-icmp 헤더는 8byte로 구성되어 있다.
+ICMP 헤더는 8byte로 구성되어 있다.
 
 | Type              | Byte  |
 | :---              | :---  |
@@ -305,9 +305,9 @@ printf("Data Payload (%d)\n", icmp_data_size);
 PrintData(packet + icmp_header_size , icmp_data_size );
 ```
 
-## **tcp**
+## **TCP**
 
-tcp 헤더는 20byte와 Options로 구성되어 있다.
+TCP 헤더는 20byte와 Options로 구성되어 있다.
 
 | Type              | Byte  |
 | :---              | :---  |
@@ -347,9 +347,9 @@ printf("Data Payload (%d)\n", tcp_data_size);
 PrintData(packet + tcp_header_size , tcp_data_size );
 ```
 
-## **udp**
+## **UDP**
 
-udp 헤더는 8byte로 구성되어 있다.
+UDP 헤더는 8byte로 구성되어 있다.
 
 | Type              | Byte  |
 | :---              | :---  |

@@ -22,24 +22,4 @@
 
 [Hello World](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/Hello)
 
-## **Hello**
-
-안녕하세요.
-
-### Syntax
-
-```c++
-#include <stdio.h>
-
-void Hello(const char *msg);
-```
-
-### parameter
-
-| parameter | description |
-| :--- | :--- |
-| msg | 데이터가 담긴 변수 포인터(위치) |
-
-### Return
-
-성공 시 0을 반환하고, 실패 시 0이 아닌 값을 반환합니다.
+# **Full Code**

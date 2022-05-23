@@ -2,15 +2,6 @@
 
 Hello World
 
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
-
 # **Syntax**
 
 ```c++
