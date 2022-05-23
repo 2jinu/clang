@@ -2,15 +2,6 @@
 
 파일 포인터의 현재 위치를 가져옵니다.
 
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
-
 # **Syntax**
 
 ```c++

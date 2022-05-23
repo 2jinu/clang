@@ -1,15 +1,6 @@
-# Functions
+# fwrite
 
 파일 스트림에서 데이터를 작성합니다.
-
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
 
 # **Syntax**
 

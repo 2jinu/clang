@@ -2,15 +2,6 @@
 
 패킷 캡처를 위한 핸들을 얻습니다.
 
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
-
 # **Syntax**
 
 ```c++

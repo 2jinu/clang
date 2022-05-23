@@ -2,15 +2,6 @@
 
 문자열 형태의 필터링 룰을 필터 프로그램으로 컴파일하는데 사용됩니다.
 
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
-
 # **Syntax**
 
 ```c++

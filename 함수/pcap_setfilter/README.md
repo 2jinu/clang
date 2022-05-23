@@ -2,15 +2,6 @@
 
 패킷 캡처 핸들에 필터를 적용합니다.
 
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
-
 # **Syntax**
 
 ```c++

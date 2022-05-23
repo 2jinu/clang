@@ -2,15 +2,6 @@
 
 ipv4 네트워크 주소를 ASCII 문자열로 변환합니다.
 
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
-
 # **Syntax**
 
 ```c++

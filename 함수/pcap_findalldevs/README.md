@@ -2,15 +2,6 @@
 
 네트워크 장치 목록을 구성합니다. 장치가 없을 경우 NULL로 설정되지만 실패로 간주되지 않습니다.
 
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
-
 # **Syntax**
 
 ```c++

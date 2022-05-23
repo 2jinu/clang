@@ -1,15 +1,6 @@
-# Functions
+# pcap_loop
 
 패킷을 캡처 후 콜백 함수에 전달하는 함수입니다. cnt만큼 패킷을 캡처합니다.
-
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
 
 # **Syntax**
 

@@ -2,15 +2,6 @@
 
 파일 포인터를 지정된 위치로 이동합니다.
 
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
-
 # **Syntax**
 
 ```c++

@@ -2,15 +2,6 @@
 
 네트워크 장치의 네트워크 주소와 서브넷 마스크를 결정합니다.
 
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
-
 # **Syntax**
 
 ```c++

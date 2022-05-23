@@ -2,15 +2,6 @@
 
 특수 파일의 기본 장치 매개변수를 조작합니다.
 
-# **INDEX**
-
-**1. [Syntax](#Syntax)**
-
-**1. [parameter](#parameter)**
-
-**1. [Return](#Return)**
-
-
 # **Syntax**
 
 ```c++
