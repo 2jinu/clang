@@ -11,15 +11,25 @@
 
 # **INDEX**
 
-**1. [Hello World](#Hello-World)**
+**1. [패키지 설치](#패키지-설치)**
 
  - [Hello](#Hello)
 
 **2. [Full Code](#Full-Code)**
 
 
-# **Hello World**
+# **패키지 설치**
 
-[Hello World](https://github.com/2jinu/clang/tree/main/%ED%95%A8%EC%88%98/Hello)
+libssl-dev를 설치한다.
+
+```sh
+root@ubuntu:~# apt-get -y install libssl-dev
+```
+
+컴파일시 libssl과 libcrypto을 링크시켜준다.
+
+```sh
+root@ubuntu:~# g++ -g source.cpp -lssl -lcrypto -o outputfile
+```
 
 # **Full Code**
