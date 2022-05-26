@@ -11,44 +11,44 @@
 
 # **INDEX**
 
-**[1 패키지 설치](#1-패키지-설치)**
+**1. [패키지 설치](#패키지-설치)**
 
-**[2. 네트워크 정보 확인](#2.-네트워크-정보-확인)**
+**2. [네트워크 정보 확인](#네트워크-정보-확인)**
 
-**[3. 패킷 캡처](#3.-패킷-캡처)**
+**3. [패킷 캡처](#패킷-캡처)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;[3.1. 캡처 필터링 적용하기](#3.1.-캡처-필터링-적용하기)
+ - [캡처 필터링 적용하기](#캡처-필터링-적용하기)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[3.2. 캡처 콜백 함수](#3.2.-캡처-콜백-함수)
+ - [캡처 콜백 함수](#캡처-콜백-함수)
 
-**[4. 패킷 분석](#4.-패킷-분석)**
+**4. [패킷 분석](#패킷-분석)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;[4.1. ETHERNET](#4.1.-ETHERNET)
+ - [ETHERNET 분석](#ETHERNET-분석)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[4.2. IP](#4.2.-IP)
+ - [IP 분석](#IP-분석)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[4.3. ICMP](#4.3.-ICMP)
+ - [ICMP 분석](#ICMP-분석)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[4.4. TCP](#4.4.-TCP)
+ - [4TCP](#TCP-분석)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[4.5. UDP](#4.5.-UDP)
+ - [UDP](#UDP-분석)
 
-**[5. 패킷 생성](#5.-패킷-생성)**
+**5. [패킷 생성](#패킷-생성)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;[5.1. ETHERNET](#5.1.-ETHERNET)
+ - [ETHERNET 생성](#ETHERNET-생성)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[5.2. IP](#5.2.-IP)
+ - [IP 생성](#IP-생성)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[5.3. ICMP](#5.3.-ICMP)
+ - [ICMP 생성](#ICMP-생성)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[5.4. TCP](#5.4.-TCP)
+ - [TCP 생성](#TCP-생성)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[5.5. UDP](#5.5.-UDP)
+ - [UDP 생성](#UDP-생성)
 
-**[6. Full Code](#6.-Full-Code)**
+**6. [Full Code](#Full-Code)**
 
 
-# **1 패키지 설치**
+# **패키지 설치**
 
 libtins-dev를 설치한다.
 
@@ -63,7 +63,7 @@ root@ubuntu:~# g++ -g source.cpp -ltins -o outputfile
 ```
 
 
-# **2. 네트워크 정보 확인**
+# **네트워크 정보 확인**
 
 네트워크 인터페이스 명, IP 주소, MAC 주소를 알아보자.
 
@@ -72,7 +72,7 @@ std::vector<Tins::NetworkInterface> NetworkInterfaceVector(Tins::NetworkInterfac
 for(int i = 0; i < NetworkInterfaceVector.size(); ++i) std::cout << i << ' ' << NetworkInterfaceVector[i].name() << '\t' << NetworkInterfaceVector[i].ipv4_address() << '\t' << NetworkInterfaceVector[i].hw_address() << std::endl;
 ```
 
-# **3. 패킷 캡처**
+# **패킷 캡처**
 
 나에게 오는 패킷만(Promiscuous false) 즉시(immediate true) 캡처해보자.
 
@@ -82,7 +82,7 @@ SnifferConfig.set_immediate_mode(true);
 SnifferConfig.set_promisc_mode(false);
 ```
 
-## **3.1. 캡처 필터링 적용하기**
+## **캡처 필터링 적용하기**
 
 포트가 80번인것만 필터링해보자.
 
@@ -90,7 +90,7 @@ SnifferConfig.set_promisc_mode(false);
 SnifferConfig.set_filter("port 80 and src 192.168.0.30");
 ```
 
-## **3.2. 캡처 콜백 함수**
+## **캡처 콜백 함수**
 
 패킷이 인터페이스로 들어왔을 때, 호출할 함수를 지정하자.
 
@@ -106,7 +106,7 @@ bool CallbackFunction(Tins::PDU &Packet) {
 
 # **4. 패킷 분석**
 
-## **4.1. ETHERNET**
+## **ETHERNET 분석**
 
 패킷의 출발지, 목적지의 MAC 주소를 확인하자.
 
@@ -117,7 +117,7 @@ std::cout << "   |-Source Address\t\t: " << EthernetPacket.src_addr() << std::en
 std::cout << "   |-Destination Address\t: " << EthernetPacket.dst_addr() << std::endl;
 ```
 
-## **4.2. IP**
+## **IP 분석**
 
 패킷의 출발지, 목적지의 IP 주소를 확인하자.
 
@@ -150,7 +150,7 @@ default:
 }
 ```
 
-## **4.3. ICMP**
+## **ICMP 분석**
 
 ICMP의 데이터를 확인해보자.
 
@@ -165,7 +165,7 @@ std::cout << "Payload (" << RawPDU.payload_size() << ")" << std::endl;
 PrintData(&RawPDU.payload().front(), RawPDU.payload_size());
 ```
 
-## **4.4. TCP**
+## **TCP 분석**
 
 TCP의 데이터를 확인해보자.
 
@@ -181,7 +181,7 @@ std::cout << "Payload (" << RawPDU.payload_size() << ")" << std::endl;
 PrintData(&RawPDU.payload().front(), RawPDU.payload_size());
 ```
 
-## **4.5. UDP**
+## **UDP 분석**
 
 UDP의 데이터를 확인해보자.
 
@@ -197,7 +197,7 @@ std::cout << "Payload (" << RawPDU.payload_size() << ")" << std::endl;
 PrintData(&RawPDU.payload().front(), RawPDU.payload_size());
 ```
 
-# **5. 패킷 생성**
+# **패킷 생성**
 
 패킷을 생성해서 보내기 위하여 PacketSender를 선언하고 send를 호출해야한다.
 
@@ -206,7 +206,7 @@ Tins::PacketSender PacketSender;
 PacketSender.send(CraftedPacket, "ens33");
 ```
 
-## **5.1. ETHERNET**
+## **ETHERNET 생성**
 
 PacketSender에 실을 Ethernet패킷을 생성해보자.
 
@@ -216,7 +216,7 @@ PacketSender에 실을 Ethernet패킷을 생성해보자.
 Tins::EthernetII CraftedPacket(EthernetPacket.src_addr(), "00:00:00:00:00:00");
 ```
 
-## **5.2. IP**
+## **IP 생성**
 
 PacketSender에 실을 IP패킷을 생성해보자.
 
@@ -226,7 +226,7 @@ PacketSender에 실을 IP패킷을 생성해보자.
 CraftedPacket /= Tins::IP(IP.src_addr(), "8.8.8.8");
 ```
 
-## **5.3. ICMP**
+## **ICMP 생성**
 
 PacketSender에 실을 ICMP패킷을 생성해보자.
 
@@ -237,7 +237,7 @@ CraftedPacket /= ICMP;
 CraftedPacket.rfind_pdu<Tins::ICMP>().type(Tins::ICMP::Flags::ECHO_REPLY);
 ```
 
-## **5.4. TCP**
+## **TCP 생성**
 
 PacketSender에 실을 TCP패킷을 생성해보자.
 
@@ -248,7 +248,7 @@ CraftedPacket /= TCP;
 CraftedPacket.rfind_pdu<Tins::TCP>().rfind_pdu<Tins::RawPDU>() = Tins::RawPDU("Hello World");
 ```
 
-## **5.5. UDP**
+## **UDP 생성**
 
 PacketSender에 실을 UDP패킷을 생성해보자.
 
@@ -259,7 +259,7 @@ CraftedPacket /= UDP;
 CraftedPacket.rfind_pdu<Tins::UDP>().rfind_pdu<Tins::RawPDU>() = Tins::RawPDU("Hello World");
 ```
 
-# **6. Full Code**
+# **Full Code**
 
 ```cpp
 #include <tins/tins.h>

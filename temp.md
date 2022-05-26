@@ -11,16 +11,16 @@
 
 # **INDEX**
 
-**[1. 패키지 설치](#1.-패키지-설치)**
+**1. [패키지 설치](#패키지-설치)**
 
-**[2. World](#2.-World)**
+**2. [World](#World)**
 
-&nbsp;&nbsp;&nbsp;&nbsp;[2.1. Hello](#2.1.-Hello)
+ - [Hello](#Hello)
 
-**[3. Full Code](#3.-Full-Code)**
+**3. [Full Code](#Full-Code)**
 
 
-# **1. 패키지 설치**
+# **패키지 설치**
 
 libssl-dev를 설치한다.
 
@@ -34,6 +34,6 @@ root@ubuntu:~# apt-get -y install libssl-dev
 root@ubuntu:~# g++ -g source.cpp -lssl -lcrypto -o outputfile
 ```
 
-# **2. World**
-## **2.1. Hello**
-# **3. Full Code**
+# **World**
+## **Hello**
+# **Full Code**
