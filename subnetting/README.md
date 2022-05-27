@@ -21,7 +21,7 @@
 **5. [Full Code](#Full-Code)**
 
 
-# **prefix(cidr)2netmask**
+# **prefix-cidr2netmask**
 # **netmask2prefix(cidr)**
 # **사용 가능한 IP 수**
 # **사용 가능한 IP 대역**
