@@ -10,7 +10,7 @@
 
 # **INDEX**
 
-**1. [prefix(cidr)2netmask](#prefix(cidr)2netmask)**
+**1. [prefix-cidr2netmask](#prefix-cidr2netmask)**
 
 **2. [netmask2prefix(cidr)](#netmask2prefix(cidr))**
 
