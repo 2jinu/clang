@@ -232,6 +232,12 @@ ERR_free_strings();
 EVP_cleanup();
 ```
 
+생성된 인증서를 확인해보자.
+
+```sh
+root@ubuntu:~# openssl x509 -in certificate.crt -text
+```
+
 # **Full Code**
 
 ```cpp
